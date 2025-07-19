@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Listing - Sidzy Store</title>
+  <style>
+    :root {
+      --eclipse-black: #1B1B1B;
+      --moonlight-gray: #A8A9AD;
+      --astral-blue: #24476C;
+      --midnight-navy: #0A122A;
+      --stardust-white: #E6E8E6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--stardust-white);
+      color: var(--midnight-navy);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--eclipse-black), var(--midnight-navy));
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      background-color: var(--astral-blue);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: var(--moonlight-gray);
+      color: var(--eclipse-black);
+    }
+
+    .products-container {
+      padding: 3rem 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 1.2rem;
+    }
+
+    .product-name {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--eclipse-black);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      color: var(--astral-blue);
+      font-weight: 600;
+    }
+
+    .btn-view {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: var(--midnight-navy);
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: background-color 0.3s;
+    }
+
+    .btn-view:hover {
+      background-color: var(--astral-blue);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--moonlight-gray);
+      color: var(--eclipse-black);
+      margin-top: 3rem;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    Welcome to Sidzy Store
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="checkout.html">Checkout</a>
+    <a href="login.html">Login</a>
+  </nav>
+
+  <section class="products-container">
+    <div class="product-card">
+      <img src="/assets/product1.png" alt="Product 1">
+      <div class="product-info">
+        <div class="product-name">Cool Sneakers</div>
+        <div class="product-price">₹2,999</div>
+        <a href="product-detail.html" class="btn-view">View Details</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="/assets/product2.png" alt="Product 2">
+      <div class="product-info">
+        <div class="product-name">Casual Hoodie</div>
+        <div class="product-price">₹1,499</div>
+        <a href="product-detail.html" class="btn-view">View Details</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="/assets/product3.png" alt="Product 3">
+      <div class="product-info">
+        <div class="product-name">Stylish Watch</div>
+        <div class="product-price">₹3,899</div>
+        <a href="product-detail.html" class="btn-view">View Details</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="/assets/product4.png" alt="Product 4">
+      <div class="product-info">
+        <div class="product-name">Smart Backpack</div>
+        <div class="product-price">₹1,199</div>
+        <a href="product-detail.html" class="btn-view">View Details</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Sidzy Store. All rights reserved.
+  </footer>
+</body>
+
+</html>
