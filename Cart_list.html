@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart - Sidzy Store</title>
+  <style>
+    :root {
+      --eclipse-black: #1B1B1B;
+      --moonlight-gray: #A8A9AD;
+      --astral-blue: #24476C;
+      --midnight-navy: #0A122A;
+      --stardust-white: #E6E8E6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--stardust-white);
+      color: var(--midnight-navy);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--eclipse-black), var(--midnight-navy));
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      background-color: var(--astral-blue);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: var(--moonlight-gray);
+      color: var(--eclipse-black);
+    }
+
+    nav a.active {
+      background-color: white;
+      color: var(--astral-blue);
+      pointer-events: none;
+      cursor: default;
+    }
+
+    .cart-container {
+      padding: 3rem 5%;
+    }
+
+    .cart-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+    }
+
+    .cart-item img {
+      width: 100px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-right: 1rem;
+    }
+
+    .item-details {
+      flex-grow: 1;
+      margin-left: 1rem;
+    }
+
+    .item-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--eclipse-black);
+    }
+
+    .item-price {
+      color: var(--astral-blue);
+      font-weight: 600;
+      margin: 0.5rem 0;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .qty-btn {
+      background-color: var(--astral-blue);
+      color: white;
+      border: none;
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .qty-value {
+      min-width: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .remove-btn {
+      background-color: var(--midnight-navy);
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-left: auto;
+    }
+
+    .remove-btn:hover {
+      background-color: var(--astral-blue);
+    }
+
+    .cart-summary {
+      text-align: right;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .checkout-btn {
+      display: inline-block;
+      background-color: var(--astral-blue);
+      color: white;
+      padding: 0.7rem 1.4rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .checkout-btn:hover {
+      background-color: var(--midnight-navy);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--moonlight-gray);
+      color: var(--eclipse-black);
+      margin-top: 3rem;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <header>Your Shopping Cart</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a class="active" href="cart.html">Cart</a>
+    <a href="checkout.html">Checkout</a>
+    <a href="login.html">Login</a>
+  </nav>
+
+  <section class="cart-container">
+    <h2 class="cart-title">Items in Your Cart</h2>
+
+    <div class="cart-item" data-price="2999">
+      <img src="SEC_PROJECT/images/shoes.png" alt="Sneakers">
+      <div class="item-details">
+        <div class="item-name">Cool Sneakers</div>
+        <div class="item-price">₹2,999</div>
+        <div class="quantity-controls">
+          <button class="qty-btn decrease">−</button>
+          <span class="qty-value">1</span>
+          <button class="qty-btn increase">+</button>
+        </div>
+      </div>
+      <button class="remove-btn">Remove</button>
+    </div> 
+
+    <div class="cart-item" data-price="2999">
+      <img src="SEC_PROJECT/images/hoodie.jpg" alt="Sneakers">
+      <div class="item-details">
+        <div class="item-name">Casual Hoodie</div>
+        <div class="item-price">₹1,499</div>
+        <div class="quantity-controls">
+          <button class="qty-btn decrease">−</button>
+          <span class="qty-value">1</span>
+          <button class="qty-btn increase">+</button>
+        </div>
+      </div>
+      <button class="remove-btn">Remove</button>
+    </div>
+
+    <div class="cart-item" data-price="1499">
+      <img src="SEC_PROJECT/images/watch.png" alt="Hoodie">
+      <div class="item-details">
+        <div class="item-name">Stylish Watch</div>
+        <div class="item-price">₹3,899</div>
+        <div class="quantity-controls">
+          <button class="qty-btn decrease">−</button>
+          <span class="qty-value">2</span>
+          <button class="qty-btn increase">+</button>
+        </div>
+      </div>
+      <button class="remove-btn">Remove</button>
+    </div>
+
+    <div class="cart-summary">
+      Total: ₹<span id="total-price">5997</span><br>
+      <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+    </div>
+  </section>
+
+  <footer>&copy; 2025 our Store. All rights reserved.</footer>
+
+  <script>
+    function updateTotal() {
+      const cartItems = document.querySelectorAll(".cart-item");
+      let total = 0;
+      cartItems.forEach(item => {
+        const price = parseInt(item.getAttribute("data-price"));
+        const qty = parseInt(item.querySelector(".qty-value").innerText);
+        total += price * qty;
+      });
+      document.getElementById("total-price").innerText = total;
+    }
+
+    document.querySelectorAll(".qty-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        const container = button.closest(".cart-item");
+        const qtySpan = container.querySelector(".qty-value");
+        let qty = parseInt(qtySpan.innerText);
+
+        if (button.classList.contains("increase")) {
+          qty++;
+        } else if (button.classList.contains("decrease") && qty > 1) {
+          qty--;
+        }
+
+        qtySpan.innerText = qty;
+        updateTotal();
+      });
+    });
+
+    document.querySelectorAll(".remove-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        const item = button.closest(".cart-item");
+        item.remove();
+        updateTotal();
+      });
+    });
+
+    window.onload = updateTotal;
+  </script>
+</body>
+</html>
