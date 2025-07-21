@@ -24,6 +24,7 @@ function loadCart() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const cartItemsContainer = document.getElementById('cart-items');
   const totalPriceElement = document.getElementById('total-price');
+  const checkoutBtn = document.querySelector('.checkout-btn'); // grab the checkout button
   cartItemsContainer.innerHTML = '';
 
   if (cart.length === 0) {
@@ -34,6 +35,11 @@ function loadCart() {
       </div>
     `;
     totalPriceElement.innerText = 0;
+
+    // 🔥 Disable Checkout Button
+    checkoutBtn.classList.add('disabled');
+    checkoutBtn.setAttribute('disabled', true);
+
     return;
   }
 
@@ -60,8 +66,14 @@ function loadCart() {
   });
 
   totalPriceElement.innerText = total;
+
+  // ✅ Enable Checkout Button
+  checkoutBtn.classList.remove('disabled');
+  checkoutBtn.removeAttribute('disabled');
+
   attachEventListeners();
 }
+
 
 
 function attachEventListeners() {
