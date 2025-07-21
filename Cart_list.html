@@ -198,94 +198,17 @@
   <section class="cart-container">
     <h2 class="cart-title">Items in Your Cart</h2>
 
-    <div class="cart-item" data-price="2999">
-      <img src="images/shoes.png" alt="Sneakers">
-      <div class="item-details">
-        <div class="item-name">Cool Sneakers</div>
-        <div class="item-price">₹2,999</div>
-        <div class="quantity-controls">
-          <button class="qty-btn decrease">−</button>
-          <span class="qty-value">1</span>
-          <button class="qty-btn increase">+</button>
-        </div>
-      </div>
-      <button class="remove-btn">Remove</button>
-    </div> 
-
-    <div class="cart-item" data-price="2999">
-      <img src="images/hoodie.jpg" alt="Sneakers">
-      <div class="item-details">
-        <div class="item-name">Casual Hoodie</div>
-        <div class="item-price">₹1,499</div>
-        <div class="quantity-controls">
-          <button class="qty-btn decrease">−</button>
-          <span class="qty-value">1</span>
-          <button class="qty-btn increase">+</button>
-        </div>
-      </div>
-      <button class="remove-btn">Remove</button>
-    </div>
-
-    <div class="cart-item" data-price="1499">
-      <img src="images/watch.png" alt="Hoodie">
-      <div class="item-details">
-        <div class="item-name">Stylish Watch</div>
-        <div class="item-price">₹3,899</div>
-        <div class="quantity-controls">
-          <button class="qty-btn decrease">−</button>
-          <span class="qty-value">2</span>
-          <button class="qty-btn increase">+</button>
-        </div>
-      </div>
-      <button class="remove-btn">Remove</button>
-    </div>
+    <!-- Dynamic cart items will be inserted here -->
+    <div id="cart-items"></div>
 
     <div class="cart-summary">
-      Total: ₹<span id="total-price">5997</span><br>
+      Total: ₹<span id="total-price">0</span><br>
       <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
     </div>
   </section>
 
   <footer>&copy; 2025 our Store. All rights reserved.</footer>
 
-  <script>
-    function updateTotal() {
-      const cartItems = document.querySelectorAll(".cart-item");
-      let total = 0;
-      cartItems.forEach(item => {
-        const price = parseInt(item.getAttribute("data-price"));
-        const qty = parseInt(item.querySelector(".qty-value").innerText);
-        total += price * qty;
-      });
-      document.getElementById("total-price").innerText = total;
-    }
-
-    document.querySelectorAll(".qty-btn").forEach(button => {
-      button.addEventListener("click", () => {
-        const container = button.closest(".cart-item");
-        const qtySpan = container.querySelector(".qty-value");
-        let qty = parseInt(qtySpan.innerText);
-
-        if (button.classList.contains("increase")) {
-          qty++;
-        } else if (button.classList.contains("decrease") && qty > 1) {
-          qty--;
-        }
-
-        qtySpan.innerText = qty;
-        updateTotal();
-      });
-    });
-
-    document.querySelectorAll(".remove-btn").forEach(button => {
-      button.addEventListener("click", () => {
-        const item = button.closest(".cart-item");
-        item.remove();
-        updateTotal();
-      });
-    });
-
-    window.onload = updateTotal;
-  </script>
+  <script src="script.js">  </script>  
 </body>
 </html>
