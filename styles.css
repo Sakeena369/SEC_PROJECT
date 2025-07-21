@@ -232,6 +232,29 @@ nav a.active {
     background-color: var(--midnight-navy);
 }
 
+.empty-cart-message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--midnight-navy);
+  margin-top: 3rem;
+}
+
+.empty-cart-message a.back-to-shop {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: var(--astral-blue);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.empty-cart-message a.back-to-shop:hover {
+  background-color: var(--midnight-navy);
+}
+
+
 footer {
     text-align: center;
     padding: 1.5rem;

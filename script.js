@@ -21,34 +21,48 @@ function addToCart(productName, productPrice, productImage) {
 
 
 function loadCart() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = '';
-    let total = 0;
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartItemsContainer = document.getElementById('cart-items');
+  const totalPriceElement = document.getElementById('total-price');
+  cartItemsContainer.innerHTML = '';
 
-    cart.forEach((item, index) => {
-        total += item.price * item.qty;
+  if (cart.length === 0) {
+    cartItemsContainer.innerHTML = `
+      <div class="empty-cart-message">
+        🛒 Your cart is empty! <br>
+        <a href="product_list.html" class="back-to-shop">Start Shopping</a>
+      </div>
+    `;
+    totalPriceElement.innerText = 0;
+    return;
+  }
 
-        const cartItemHTML = `
-            <div class="cart-item" data-index="${index}">
-                <img src="${item.img}" alt="${item.name}">
-                <div class="item-details">
-                    <div class="item-name">${item.name}</div>
-                    <div class="item-price">₹${item.price}</div>
-                    <div class="quantity-controls">
-                        <button class="qty-btn decrease">−</button>
-                        <span class="qty-value">${item.qty}</span>
-                        <button class="qty-btn increase">+</button>
-                    </div>
-                </div>
-                <button class="remove-btn">Remove</button>
-            </div>`;
-        cartItemsContainer.insertAdjacentHTML('beforeend', cartItemHTML);
-    });
+  let total = 0;
 
-    document.getElementById('total-price').innerText = total;
-    attachEventListeners();
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+
+    const cartItemHTML = `
+      <div class="cart-item" data-index="${index}">
+        <img src="${item.img}" alt="${item.name}">
+        <div class="item-details">
+          <div class="item-name">${item.name}</div>
+          <div class="item-price">₹${item.price}</div>
+          <div class="quantity-controls">
+            <button class="qty-btn decrease">−</button>
+            <span class="qty-value">${item.qty}</span>
+            <button class="qty-btn increase">+</button>
+          </div>
+        </div>
+        <button class="remove-btn">Remove</button>
+      </div>`;
+    cartItemsContainer.insertAdjacentHTML('beforeend', cartItemHTML);
+  });
+
+  totalPriceElement.innerText = total;
+  attachEventListeners();
 }
+
 
 function attachEventListeners() {
     document.querySelectorAll('.qty-btn').forEach(btn => {
