@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - Zaalim Store</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <header>Checkout</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="product_list.html">Products</a>
+    <a href="Cart_list.html">Cart</a>
+    <a class="active" href="checkout.html">Checkout</a>
+    <a href="login.html">Login</a>
+  </nav>
+
+  <section class="checkout-container">
+    <!-- Billing Section -->
+    <div class="billing-form">
+      <h2>Billing & Shipping Details</h2>
+      <form id="checkout-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="John Doe" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="john@example.com" required />
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" placeholder="9876543210" required />
+
+        <label for="address">Address</label>
+        <textarea id="address" placeholder="123 Street Name, City, State" rows="4" required></textarea>
+
+        <label for="payment">Payment Method</label>
+        <select id="payment" required>
+          <option value="cod">Cash on Delivery</option>
+          <option value="upi">UPI</option>
+          <option value="card">Credit/Debit Card</option>
+        </select>
+
+        <button type="submit" class="place-order-btn">Place Order</button>
+      </form>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <div id="summary-items">
+        <div class="summary-item">
+          <span>Cool Sneakers</span>
+          <span>₹2,999</span>
+        </div>
+        <div class="summary-item">
+          <span>Casual Hoodie × 2</span>
+          <span>₹2,998</span>
+        </div>
+        <div class="summary-item">
+          <span>Shipping</span>
+          <span>₹0</span>
+        </div>
+        <div class="summary-item total">
+          <span>Total</span>
+          <span>₹5,997</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Zaalim Store. All rights reserved.
+  </footer>
+</body>
+</html>
