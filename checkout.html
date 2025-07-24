@@ -5,6 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Checkout - Zaalim Store</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+          /* Checkout Page Styling */
+      .checkout-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 3rem 5%;
+      }
+
+      .billing-form,
+      .order-summary {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        flex: 1 1 300px;
+      }
+
+      .billing-form h2,
+      .order-summary h2 {
+        margin-bottom: 1.5rem;
+        font-size: 1.6rem;
+        color: var(--eclipse-black);
+      }
+
+      .billing-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .billing-form input,
+      .billing-form select,
+      .billing-form textarea {
+        width: 100%;
+        padding: 0.8rem;
+        margin-bottom: 1.2rem;
+        border: 1px solid var(--moonlight-gray);
+        border-radius: 8px;
+        font-size: 1rem;
+      }
+
+      .place-order-btn {
+        display: inline-block;
+        background-color: var(--astral-blue);
+        color: white;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .place-order-btn:hover {
+        background-color: var(--midnight-navy);
+      }
+
+      .summary-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.8rem;
+        font-weight: 500;
+      }
+
+      .summary-item.total {
+        font-weight: 700;
+        font-size: 1.2rem;
+        border-top: 1px solid var(--moonlight-gray);
+        padding-top: 1rem;
+      }
+
+  </style>
   <script defer src="script.js"></script>
 </head>
 
