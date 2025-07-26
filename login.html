@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zaalim Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="background"></div>
+  <!-- Header -->
+  <header class="banner">
+    <h1>Welcome to Zaalim Store</h1>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#" class="active"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fas fa-box"></i> Products</a></li>
+      <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+      <li><a href="#"><i class="fas fa-credit-card"></i> Checkout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+ <!-- Main Content -->
+<main class="main-content">
+  <div class="login-container">
+    <div class="login-box">
+      <form class="login-form">
+        <h2>Login</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" required placeholder="Enter username">
+
+        <!-- <label for="email">Email:</label>
+        <input type="email" id="email" required placeholder="Enter email"> -->
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone"  placeholder="Enter phone number" pattern="[0-9]{10}" maxlength="10" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required placeholder="Enter password">
+
+        <button type="submit">Login</button>
+      </form>
+      <p>New User? <a href="#">Sign Up</a></p>
+    </div>
+  </div>
+
+  <!-- Right side (optional text or image area) -->
+  <div class="placeholder-content">
+    <p>Welcome to the official Zaalim Store! Shop the latest drops here.</p>
+  </div>
+</main>
+
+  <footer>
+        <p>&copy; 2025 MyApp. All rights reserved.</p>
+    </footer>
+</body>
+</html>
