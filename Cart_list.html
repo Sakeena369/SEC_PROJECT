@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart - Sidzy Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>Your Shopping Cart</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="product_list.html">Products</a>
+    <a class="active" href="Cart_list.html">Cart</a>
+    <a href="checkout.html">Checkout</a>
+    <a href="login.html">Login</a>
+  </nav>
+
+  <section class="cart-container">
+    <h2 class="cart-title">Items in Your Cart</h2>
+
+    <!-- Dynamic cart items will be inserted here -->
+    <div id="cart-items"></div>
+
+    <div class="cart-summary">
+      Total: ₹<span id="total-price">0</span><br>
+      <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+    </div>
+  </section>
+
+  <footer>&copy; 2025 our Store. All rights reserved.</footer>
+
+  <script src="script.js">  </script>  
+</body>
+</html>

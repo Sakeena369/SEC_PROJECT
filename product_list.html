@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Listing - Sidzy Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <header>
+    Welcome to Zaalim Store
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a class="active" href="products.html">Products</a>
+    <a href="Cart_list.html">Cart</a>
+    <a href="checkout.html">Checkout</a>
+    <a href="login.html">Login</a>
+  </nav>
+
+  <section class="products-container">
+    <div class="product-card">
+      <img src="images/shoes.png" alt="Product 1">
+      <div class="product-info">
+        <div class="product-name">Cool Sneakers</div>
+        <div class="product-price">₹2,999</div>
+        <a href="product_list.html" class="btn-view" onclick="addToCart('Cool Sneakers', 2999, 'images/shoes.png')">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="images/hoodie.jpg" alt="Product 2">
+      <div class="product-info">
+        <div class="product-name">Casual Hoodie</div>
+        <div class="product-price">₹1,499</div>
+        <a href="product_list.html" class="btn-view" onclick="addToCart('Casual Hoodie', 1499, 'images/hoodie.jpg')" >Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="images/watch.png" alt="Product 3">
+      <div class="product-info">
+        <div class="product-name">Stylish Watch</div>
+        <div class="product-price">₹3,899</div>
+        <a href="product_list.html" class="btn-view" onclick="addToCart('Stylish Watch', 3899, 'images/watch.png')">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="images/bag.jpg" alt="Product 4">
+      <div class="product-info">
+        <div class="product-name">Smart Backpack</div>
+        <div class="product-price">₹2,199</div>
+        <a href="product_list.html" class="btn-view" onclick="addToCart('Smart Backpack', 2199, 'images/bag.jpg')">Add to Cart</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="products-container">
+    <div class="product-card">
+      <img src="images/Sling_Bag.png" alt="Product 1">
+      <div class="product-info">
+        <div class="product-name">Sling Bag</div>
+        <div class="product-price">₹1,789</div>
+        <a href="product_list.html" class="btn-view" onclick="addToCart('Slim Bag', 1789, 'images/Sling_Bag.png')">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="images/googles.png" alt="Product 2">
+      <div class="product-info">
+        <div class="product-name">Googles</div>
+        <div class="product-price">₹1,299</div>
+        <a href="product_list.html" class="btn-view" onclick="addToCart('Googles', 1299, 'images/googles.png')">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="images/earrings.png" alt="Product 3">
+      <div class="product-info">
+        <div class="product-name">Stylish Beaded Earrings</div>
+        <div class="product-price">₹899</div>
+        <a href="product_list.html" class="btn-view" onclick="addToCart('Stylish Beaded Earrings', 2999, 'images/earrings.png')">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="images/bottles.png" alt="Product 4">
+      <div class="product-info">
+        <div class="product-name">Smart WaterBottle</div>
+        <div class="product-price">₹599</div>
+        <a href="product_list.html" class="btn-view" onclick="addToCart('Smart WaterBottle', 599, 'images/bottles.png')">Add to Cart</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Zalim Store. All rights reserved.
+  </footer>
+</body>
+
+</html>
