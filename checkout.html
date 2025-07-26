@@ -149,5 +149,50 @@
   <footer>
     &copy; 2025 Zaalim Store. All rights reserved.
   </footer>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const summaryContainer = document.getElementById('summary-items');
+
+    summaryContainer.innerHTML = ''; // Clear default content
+
+    if (cart.length === 0) {
+      summaryContainer.innerHTML = '<p>Your cart is empty.</p>';
+      return;
+    }
+
+    let total = 0;
+
+    cart.forEach(item => {
+      const itemTotal = item.price * item.qty;
+      total += itemTotal;
+
+      const itemElement = document.createElement('div');
+      itemElement.classList.add('summary-item');
+      itemElement.innerHTML = `
+        <span>${item.name} × ${item.qty}</span>
+        <span>₹${itemTotal}</span>
+      `;
+      summaryContainer.appendChild(itemElement);
+    });
+
+    // Add shipping (₹0)
+    summaryContainer.innerHTML += `
+      <div class="summary-item">
+        <span>Shipping</span>
+        <span>₹0</span>
+      </div>
+    `;
+
+    // Add total
+    summaryContainer.innerHTML += `
+      <div class="summary-item total">
+        <span>Total</span>
+        <span>₹${total}</span>
+      </div>
+    `;
+  });
+</script>
+
 </body>
 </html>
