@@ -58,5 +58,24 @@
   <footer>
         <p>&copy; 2025 MyApp. All rights reserved.</p>
     </footer>
+
+    <script>
+  document.querySelector('.login-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById('username').value.trim();
+    if (!username) {
+      alert('Please enter a username!');
+      return;
+    }
+
+    // Save username in localStorage
+    localStorage.setItem('loggedInUser', username);
+    
+    alert(`Welcome back, ${username}!`);
+    window.location.href = 'index.html';
+  });
+</script>
+
 </body>
 </html>
