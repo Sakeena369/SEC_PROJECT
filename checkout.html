@@ -3,96 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <title>Checkout - Zaalim Store</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-          /* Checkout Page Styling */
-      .checkout-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        padding: 3rem 5%;
-      }
 
-      .billing-form,
-      .order-summary {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 12px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        flex: 1 1 300px;
-      }
-
-      .billing-form h2,
-      .order-summary h2 {
-        margin-bottom: 1.5rem;
-        font-size: 1.6rem;
-        color: var(--eclipse-black);
-      }
-
-      .billing-form label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-      }
-
-      .billing-form input,
-      .billing-form select,
-      .billing-form textarea {
-        width: 100%;
-        padding: 0.8rem;
-        margin-bottom: 1.2rem;
-        border: 1px solid var(--moonlight-gray);
-        border-radius: 8px;
-        font-size: 1rem;
-      }
-
-      .place-order-btn {
-        display: inline-block;
-        background-color: var(--astral-blue);
-        color: white;
-        padding: 0.9rem 1.5rem;
-        font-size: 1rem;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        width: 100%;
-        margin-top: 1rem;
-      }
-
-      .place-order-btn:hover {
-        background-color: var(--midnight-navy);
-      }
-
-      .summary-item {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 0.8rem;
-        font-weight: 500;
-      }
-
-      .summary-item.total {
-        font-weight: 700;
-        font-size: 1.2rem;
-        border-top: 1px solid var(--moonlight-gray);
-        padding-top: 1rem;
-      }
-
-  </style>
   <script defer src="script.js"></script>
 </head>
 
 <body>
   <header>Checkout</header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="product_list.html">Products</a>
-    <a href="Cart_list.html">Cart</a>
-    <a class="active" href="checkout.html">Checkout</a>
-    <a href="login.html">Login</a>
-  </nav>
+  <nav class="navbar">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+    <li><a href="product_list.html"><i class="fas fa-box"></i> Products</a></li>
+    <li><a href="Cart_list.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+    <li><a href="checkout.html"><i class="fas fa-credit-card"></i> Checkout</a></li>
+  </ul>
+</nav>
+
 
   <section class="checkout-container">
     <!-- Billing Section -->
@@ -126,24 +57,9 @@
     <div class="order-summary">
       <h2>Order Summary</h2>
       <div id="summary-items">
-        <div class="summary-item">
-          <span>Cool Sneakers</span>
-          <span>₹2,999</span>
-        </div>
-        <div class="summary-item">
-          <span>Casual Hoodie × 2</span>
-          <span>₹2,998</span>
-        </div>
-        <div class="summary-item">
-          <span>Shipping</span>
-          <span>₹0</span>
-        </div>
-        <div class="summary-item total">
-          <span>Total</span>
-          <span>₹5,997</span>
-        </div>
+        <!-- Items will be dynamically inserted here -->
+        <p>Your cart is empty.</p>
       </div>
-    </div>
   </section>
 
   <footer>

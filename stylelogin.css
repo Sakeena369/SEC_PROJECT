@@ -35,7 +35,19 @@ html, body {
   flex-direction: column;
   overflow-x: hidden; /* remove horizontal scroll */
 }
-
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--stardust-white);
+    color: var(--midnight-navy);
+    line-height: 1.6;
+}
+:root {
+    --eclipse-black: #1B1B1B;
+    --moonlight-gray: #f4f4f4;
+    --astral-blue: #24476C;
+    --midnight-navy: #0A122A;
+    --stardust-white: #E6E8E6;
+}
 main {
   flex: 1;
   display: flex;
@@ -68,16 +80,8 @@ main {
 }
 
 /* Header Banner */
-.banner {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: white;
-  text-align: center;
-  padding: 10px 10px;
-}
 
-.banner h1 {
-  font-size: 2.2rem;
-}
+
 
 /* Navbar */
 .navbar {
@@ -121,6 +125,16 @@ main {
   padding: 60px 80px;
   gap: 60px;
 }
+header {
+    background: linear-gradient(to right, var(--eclipse-black), var(--midnight-navy));
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 
 /* Login form box */
 /* .login-container {
@@ -134,7 +148,7 @@ main {
 .login-container {
   max-width: 400px;           /* reduces the width */
   padding: 30px;              /* a bit less padding */
-  margin: 40px auto;          /* center it vertically */
+  margin: auto;          /* center it vertically */
   background: rgba(255, 255, 255, 0.2); 
   border-radius: 20px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -196,10 +210,10 @@ main {
 }
 
 footer {
-    background-color: #f0f4f8;
     text-align: center;
-    padding: 15px 0;
-    color: #333;
-    font-size: 14px;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    background-color: var(--moonlight-gray);
+    color: var(--eclipse-black);
+    margin-top: 3rem;
+    font-weight: 500;
 }

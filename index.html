@@ -3,49 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <title>Zaalim Store</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #0A122A;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background-color: #24476c;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
+    :root {
+    --eclipse-black: #1B1B1B;
+    --moonlight-gray: #A8A9AD;
+    --astral-blue: #24476C;
+    --midnight-navy: #0A122A;
+    --stardust-white: #E6E8E6;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    nav a:hover {
-      background-color: #E6E8E6;
-      color: var(--eclipse-black);
-    }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--stardust-white);
+    color: var(--midnight-navy);
+    line-height: 1.6;
+}
 
-     nav a.active {
-      background-color: white;
-      color: var(--astral-blue);
-      pointer-events: none;
-      cursor: default;
-    }
+header {
+    background: linear-gradient(to right, var(--eclipse-black), var(--midnight-navy));
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  background-color: #143a5d;
+  padding: 12px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.navbar li a.active {
+  background-color: white;
+  color: #143a5d;
+  font-weight: bold;
+}
+
+.navbar li a:hover {
+  background-color: #fff;
+  color: #143a5d;
+}
+    
     main {
       padding: 20px;
       text-align: center;
@@ -107,17 +132,20 @@
 </head>
 <body>
 
-<header><h1>
-  Welcome to Zaalim Store</h1>
+<header>
+  Welcome to Zaalim Store
 </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="product_list.html">Products</a>
-  <a href="Cart_list.html">Cart</a>
-  <a href="checkout.html">Checkout</a>
-  <a href="#">Login</a>
+<nav class="navbar">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+    <li><a href="product_list.html"><i class="fas fa-box"></i> Products</a></li>
+    <li><a href="Cart_list.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+    <li><a href="checkout.html"><i class="fas fa-credit-card"></i> Checkout</a></li>
+  </ul>
 </nav>
+
 
 <main>
 <section class="hero">
